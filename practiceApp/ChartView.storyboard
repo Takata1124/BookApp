@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Chat View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="ChartView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="ChatViewController" customModule="practiceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O8L-hE-2wf">
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <items>
+                                    <navigationItem title="Chart" id="CaY-fo-QK0">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="arrowshape.turn.up.left" catalog="system" id="jce-tB-WkG">
+                                            <connections>
+                                                <action selector="goBackView:" destination="Y6W-OH-hqX" id="zZL-JJ-GL8"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LB4-Iv-POD">
+                                <rect key="frame" x="0.0" y="735" width="393" height="83"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem image="chart.xyaxis.line" catalog="system" id="011-z4-dZl"/>
+                                    <tabBarItem tag="1" image="chart.pie" catalog="system" id="lWj-ZT-4wF"/>
+                                </items>
+                            </tabBar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iz3-Vn-R2h">
+                                <rect key="frame" x="0.0" y="103" width="393" height="350"/>
+                                <color key="backgroundColor" systemColor="systemGray3Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="urZ-eU-pyB"/>
+                                </constraints>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="DVh-kT-bCp">
+                                <rect key="frame" x="0.0" y="453" width="393" height="282"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="O8L-hE-2wf" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="2F5-Bo-Uez"/>
+                            <constraint firstItem="LB4-Iv-POD" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="7m9-yK-tY4"/>
+                            <constraint firstItem="O8L-hE-2wf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="9IA-fh-vVt"/>
+                            <constraint firstItem="DVh-kT-bCp" firstAttribute="top" secondItem="iz3-Vn-R2h" secondAttribute="bottom" id="Bxj-IR-aV3"/>
+                            <constraint firstItem="LB4-Iv-POD" firstAttribute="top" secondItem="DVh-kT-bCp" secondAttribute="bottom" id="F7J-QP-INu"/>
+                            <constraint firstItem="iz3-Vn-R2h" firstAttribute="top" secondItem="O8L-hE-2wf" secondAttribute="bottom" id="ITS-Bc-qnC"/>
+                            <constraint firstItem="iz3-Vn-R2h" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="O8S-YC-4BM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="DVh-kT-bCp" secondAttribute="trailing" id="Rvf-LY-Leu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="iz3-Vn-R2h" secondAttribute="trailing" id="X9z-sZ-1Or"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="LB4-Iv-POD" secondAttribute="bottom" id="kgl-1c-Z8r"/>
+                            <constraint firstItem="O8L-hE-2wf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="vdH-cG-Z6A"/>
+                            <constraint firstItem="DVh-kT-bCp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="wsB-bB-tM7"/>
+                            <constraint firstItem="LB4-Iv-POD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="x08-s4-mQh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="baseView" destination="iz3-Vn-R2h" id="TAA-7U-D1w"/>
+                        <outlet property="tabBar" destination="LB4-Iv-POD" id="lkC-bl-DZY"/>
+                        <outlet property="tableView" destination="DVh-kT-bCp" id="Jab-5B-Ipd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="488" y="-24"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrowshape.turn.up.left" catalog="system" width="128" height="104"/>
+        <image name="chart.pie" catalog="system" width="128" height="123"/>
+        <image name="chart.xyaxis.line" catalog="system" width="128" height="102"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

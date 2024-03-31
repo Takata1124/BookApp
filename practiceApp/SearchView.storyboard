@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Search View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="SearchView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Y6W-OH-hqX" customClass="SearchViewController" customModule="practiceApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eo6-EO-G59">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="UuS-q4-euS">
+                                <rect key="frame" x="0.0" y="103" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DXQ-oa-yqj">
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <items>
+                                    <navigationItem title="検索" id="Lfy-hn-zJ1">
+                                        <barButtonItem key="leftBarButtonItem" image="arrowshape.turn.up.left" catalog="system" id="RSO-yP-mIL">
+                                            <connections>
+                                                <action selector="backAction:" destination="Y6W-OH-hqX" id="1AI-oX-4Sc"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="item" image="barcode.viewfinder" catalog="system" id="DzG-Rq-m1w">
+                                            <connections>
+                                                <action selector="favorite:" destination="Y6W-OH-hqX" id="ch3-la-Dmi"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fV0-Oi-dzo">
+                                <rect key="frame" x="0.0" y="159" width="393" height="584"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="uPN-oV-UMB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DXQ-oa-yqj" firstAttribute="top" secondItem="uPN-oV-UMB" secondAttribute="top" id="FcF-fn-KxJ"/>
+                            <constraint firstItem="fV0-Oi-dzo" firstAttribute="leading" secondItem="uPN-oV-UMB" secondAttribute="leading" id="Fi4-7f-c2Z"/>
+                            <constraint firstItem="UuS-q4-euS" firstAttribute="top" secondItem="DXQ-oa-yqj" secondAttribute="bottom" id="GAi-0N-Kz2"/>
+                            <constraint firstItem="UuS-q4-euS" firstAttribute="leading" secondItem="uPN-oV-UMB" secondAttribute="leading" id="M12-ht-pK5"/>
+                            <constraint firstItem="fV0-Oi-dzo" firstAttribute="top" secondItem="UuS-q4-euS" secondAttribute="bottom" id="MB1-At-wqb"/>
+                            <constraint firstItem="DXQ-oa-yqj" firstAttribute="trailing" secondItem="uPN-oV-UMB" secondAttribute="trailing" id="P8e-8O-jJJ"/>
+                            <constraint firstItem="UuS-q4-euS" firstAttribute="trailing" secondItem="uPN-oV-UMB" secondAttribute="trailing" id="Pt9-cW-8D2"/>
+                            <constraint firstItem="uPN-oV-UMB" firstAttribute="trailing" secondItem="fV0-Oi-dzo" secondAttribute="trailing" id="Z3W-fb-CV1"/>
+                            <constraint firstItem="DXQ-oa-yqj" firstAttribute="leading" secondItem="uPN-oV-UMB" secondAttribute="leading" id="ZHX-av-yDL"/>
+                            <constraint firstItem="uPN-oV-UMB" firstAttribute="bottom" secondItem="fV0-Oi-dzo" secondAttribute="bottom" constant="75" id="paO-vE-6DZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="favoriteButton" destination="DzG-Rq-m1w" id="rpj-9b-D7h"/>
+                        <outlet property="searchBar" destination="UuS-q4-euS" id="33o-9h-Aj1"/>
+                        <outlet property="tableView" destination="fV0-Oi-dzo" id="qRU-7b-gaa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="130.53435114503816" y="-28.169014084507044"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arrowshape.turn.up.left" catalog="system" width="128" height="104"/>
+        <image name="barcode.viewfinder" catalog="system" width="128" height="115"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -6,14 +6,16 @@
 //
 
 import UIKit
+import FirebaseCore
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    
+    let loadingView = UIView(frame: UIScreen.main.bounds)
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
         return true
     }
 
@@ -31,6 +33,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
-
+    func startLoaging() {
+        let activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
+        activityIndicator.center = loadingView.center
+        activityIndicator.color = UIColor.gray
+        activityIndicator.style = UIActivityIndicatorView.Style.large
+        loadingView.addSubview(activityIndicator)
+        activityIndicator.startAnimating()
+        
+        let scenes = UIApplication.shared.connectedScenes
+        let windowScene = scenes.first as? UIWindowScene
+        let window = windowScene?.windows.first
+        window?.addSubview(loadingView)
+    }
+    
+    func stopLoading() {
+        loadingView.removeFromSuperview()
+    }
 }
 
